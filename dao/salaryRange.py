@@ -5,7 +5,7 @@ def search_by_salary_range():
             min_salary=float(input("Enter min Salary:"))
             max_salary=float(input("Enter max salary: "))
             data = (min_salary,max_salary)
-            stmr.execute('''select JobTitle, Salary 
+            stmt.execute('''select JobTitle, Salary 
                             from JobListing 
                             where Salary between %s and %s''',data)
             
