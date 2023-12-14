@@ -1,12 +1,11 @@
 from util.DBConnection import dbConnection
-def search_by_salary_range():
+def searchBySalary():
         try:
             conn,stmt=dbConnection.open()
-            min_salary=float(input("Enter min Salary:"))
-            max_salary=float(input("Enter max salary: "))
-            data = (min_salary,max_salary)
-            stmt.execute('''select JobTitle, Salary 
-                            from JobListing 
+            minSalary=float(input("Enter min Salary:"))
+            maxSalary=float(input("Enter max Salary: "))
+            data = (minSalary,maxSalary)
+            stmt.execute('''select JobTitle, Salary from JobListing 
                             where Salary between %s and %s''',data)
             
             result = stmt.fetchall()
