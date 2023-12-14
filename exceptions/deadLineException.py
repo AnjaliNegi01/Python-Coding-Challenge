@@ -1,0 +1,2 @@
+class ApplicationDeadlineError(Exception):
+    pass
